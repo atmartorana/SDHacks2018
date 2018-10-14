@@ -1,0 +1,146 @@
+[
+  {
+    "id": 0,
+    "name": "SCAR-20",
+    "wear": "factory new",
+    "skinType": "rifle",
+    "price": "89",
+    "currentOwner": "demoUser0",
+    "picture": "https://imgur.com/sv24Zca.jpeg"
+  },
+  {
+    "id": 1,
+    "name": "FAMAS",
+    "wear": "used",
+    "skinType": "pistol",
+    "price": "100",
+    "currentOwner": "demoUser1",
+    "picture": "https://imgur.com/MATC2wq.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "AUG",
+    "wear": "very used",
+    "skinType": "rifle",
+    "price": "55",
+    "currentOwner": "demoUser2",
+    "picture": "https://imgur.com/UkivdpO.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "MAG-7",
+    "wear": "destroyed",
+    "skinType": "SMG",
+    "price": "7",
+    "currentOwner": "demoUser3",
+    "picture": "https://imgur.com/u2bjRlX.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "P250",
+    "wear": "factory new",
+    "skinType": "SMG",
+    "price": "44",
+    "currentOwner": "demoUser4",
+    "picture": "https://imgur.com/u2bjRlX.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Sawed-off",
+    "wear": "normal",
+    "skinType": "shotgun",
+    "price": "35",
+    "currentOwner": "demoUser5",
+    "picture": "https://imgur.com/bokGvm6.jpeg"
+  },
+  {
+    "id": 6,
+    "name": "Negev",
+    "wear": "normal",
+    "skinType": "rifle",
+    "price": "100",
+    "currentOwner": "demoUser6",
+    "picture": "https://imgur.com/UkivdpO.jpeg"
+  },
+  {
+    "id": 7,
+    "name": "SSG 08",
+    "wear": "destroyed",
+    "skinType": "smg",
+    "price": "75",
+    "currentOwner": "demoUser7",
+    "picture": "https://imgur.com/u2bjRlX.jpeg"
+  },
+  {
+    "id": 8,
+    "name": "Glock-18",
+    "wear": "factory new",
+    "skinType": "pistol",
+    "price": "34",
+    "currentOwner": "demoUser8",
+    "picture": "https://imgur.com/SUK2ZmH.jpeg"
+  },
+  {
+    "id": 9,
+    "name": "MP7",
+    "wear": "normal",
+    "skinType": "SMG",
+    "price": "34",
+    "currentOwner": "demoUser9",
+    "picture": "https://imgur.com/u2bjRlX.jpeg"
+  },
+  {
+    "id": 10,
+    "name": "MP7",
+    "wear": "used",
+    "skinType": "SMG",
+    "price": "99",
+    "currentOwner": "demoUser10",
+    "picture": "https://imgur.com/u2bjRlX.jpeg"
+  },
+  {
+    "id": 11,
+    "name": "XM1014",
+    "wear": "very used",
+    "skinType": "sniper",
+    "price": "500",
+    "currentOwner": "demoUser11",
+    "picture": "https://imgur.com/MKf8YWO.jpeg"
+  },
+  {
+    "id": 12,
+    "name": "MP9",
+    "wear": "normal",
+    "skinType": "pistol",
+    "price": "89",
+    "currentOwner": "demouser12",
+    "picture": "https://imgur.com/SUK2ZmH.jpeg"
+  },
+  {
+    "id": 13,
+    "name": "Tec-9",
+    "wear": "destroyed",
+    "skinType": "pistol",
+    "price": "40",
+    "currentOwner": "demoUser13",
+    "picture": "https://imgur.com/SUK2ZmH.jpeg"
+  },
+  {
+    "id": 14,
+    "name": "Famas",
+    "wear": "very used",
+    "skinType": "rifle",
+    "price": "54",
+    "currentOwner": "demoUser14",
+    "picture": "https://imgur.com/sv24Zca.jpeg"
+  },
+  {
+    "id": 15,
+    "name": "M249",
+    "wear": "factory new",
+    "skinType": "rifle",
+    "price": "40",
+    "currentOwner": "demoUser15",
+    "picture": "https://imgur.com/sv24Zca.jpeg"
+  }
+]
