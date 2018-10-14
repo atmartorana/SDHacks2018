@@ -144,7 +144,7 @@ contract InspectBlock is ERC721 {
   */
   function transferFrom(address from, address to, uint256 decalId) public
   {
-    require(_isApprovedOrOwner(msg.sender, decalId));
+    require(_isApprovedOrOwner(from, decalId));
     require(to != address(0));
 
     _clearApproval(from, decalId);
@@ -263,10 +263,6 @@ contract InspectBlock is ERC721 {
    * @param decalId uint256 ID of the token to be added to the tokens list of the given address
    */
   function _transfer(address from, address to, uint256 decalId) internal {
-	require(to != address(0));
-	require(to != address(this));
-	require(from != to);
-
     _decalOwner[decalId] = to;
     _ownedDecalsCount[to]++;
 
@@ -276,6 +272,15 @@ contract InspectBlock is ERC721 {
 	}
 
 	emit Transfer(from,to,decalId);
+  }
+
+  function transfer(address _to, uint256 decalId) public {
+	  require(to != address(0));
+  	  require(to != address(this));
+  	  require(from != to);
+	  require(_decalOwner[decalId] == msg.sender);
+
+	  _tranfer(msg.sender,_to,decalId);
   }
 
   /**
@@ -317,8 +322,8 @@ contract InspectBlock is ERC721 {
   }
   */
 
-  function weaponDecalsOfOwner() external view returns(uint[] ownerDecals) {
-	  uint decalCount = balanceOf(msg.sender);
+  function weaponDecalsOfOwner(address _owner) external view returns(uint[] ownerDecals) {
+	  uint decalCount = balanceOf(_owner);
 
 	  if(decalCount == 0) {
 		  return new uint[](0);
@@ -331,7 +336,7 @@ contract InspectBlock is ERC721 {
 		  uint skinId;
 
 		  for(skinId = 0; skinId <= totalDecals; skinId++){
-			  if(_decalOwner[skinId] == msg.sender) {
+			  if(_decalOwner[skinId] == _owner) {
 				  result[resultIndex] = skinId;
 				  resultIndex++;
 			  }
