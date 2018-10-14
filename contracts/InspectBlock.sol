@@ -119,9 +119,8 @@ contract InspectBlock is ERC721 {
    * @param to operator address to set the approval
    * @param approved representing the status of the approval to be set
    */
-  function setApprovalForAll(address to, bool approved) public {
-    require(to != msg.sender);
-    emit ApprovalForAll(msg.sender, to, approved);
+  function setApprovalForAll(address to, bool approved) external {
+    return;
   }
 
   /**
@@ -189,7 +188,7 @@ contract InspectBlock is ERC721 {
   {
     transferFrom(from, to, decalId);
     // solium-disable-next-line arg-overflow
-    require(_checkAndCallSafeTransfer(from, to, decalId, _data));
+    //require(_checkAndCallSafeTransfer(from, to, decalId, _data));
   }
 
   /**
@@ -226,22 +225,23 @@ contract InspectBlock is ERC721 {
    * @dev Internal function to mint a new token
    * Reverts if the given token ID already exists
    * @param to The address that will own the minted token
-   * @param decalId uint256 ID of the token to be minted by the msg.sender
    */
   function _addNewGunDecal(address to, string _name, string _weaponType, string _weaponClass, uint _itemWear) internal returns (uint){
     require(to != address(0));
 
-	weaponDecal memory _tempDecal = _weaponDecal({
+	weaponDecal memory tempDecal = weaponDecal({
 		name: _name,
-		weaponType: _weaponType,
+		weaponDecalType: _weaponType,
 		weaponClass: _weaponType,
 		itemWear: _itemWear
 	});
 
-	uint256 newDecalId = allWeaponDecals.push(_weaponDecal) - 1;
+	uint256 newDecalId = allWeaponDecals.push(tempDecal) - 1;
 
-    _transfer(address(0), to, decalId);
+    _transfer(address(0), to, newDecalId);
     emit Transfer(address(0), to, newDecalId);
+
+	return newDecalId;
   }
 
   /**
@@ -275,7 +275,7 @@ contract InspectBlock is ERC721 {
 		delete _decalApprovals[decalId];
 	}
 
-	Transfer(from,to,decalId);
+	emit Transfer(from,to,decalId);
   }
 
   /**
@@ -285,7 +285,7 @@ contract InspectBlock is ERC721 {
    */
   function _removeTokenFrom(address from, uint256 decalId) internal {
     require(ownerOf(decalId) == from);
-    _decalApprovals[from] = _decalApprovals[from].sub(1);
+    _ownedDecalsCount[from] = _ownedDecalsCount[from].sub(1);
     _decalOwner[decalId] = address(0);
   }
 
@@ -346,4 +346,3 @@ contract InspectBlock is ERC721 {
   }
 
 }
-*/
