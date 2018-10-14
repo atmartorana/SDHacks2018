@@ -317,8 +317,8 @@ contract InspectBlock is ERC721 {
   }
   */
 
-  function weaponDecalsOfOwner(address _owner) external view returns(uint[] ownerDecals) {
-	  uint decalCount = balanceOf(_owner);
+  function weaponDecalsOfOwner() external view returns(uint[] ownerDecals) {
+	  uint decalCount = balanceOf(msg.sender);
 
 	  if(decalCount == 0) {
 		  return new uint[](0);
@@ -331,7 +331,7 @@ contract InspectBlock is ERC721 {
 		  uint skinId;
 
 		  for(skinId = 0; skinId <= totalDecals; skinId++){
-			  if(_decalOwner[skinId] == _owner) {
+			  if(_decalOwner[skinId] == msg.sender) {
 				  result[resultIndex] = skinId;
 				  resultIndex++;
 			  }
